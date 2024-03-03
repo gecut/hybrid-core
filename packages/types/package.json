@@ -9,7 +9,6 @@
     "types",
     "typescript"
   ],
-  "packageManager": "yarn@4.1.0",
   "author": {
     "name": "S. MohammadMahdi Zamanian",
     "email": "dev@mm25zamanain.ir",
@@ -24,13 +23,15 @@
     "url": "https://github.com/gecut/hybrid-core",
     "directory": "packages/types"
   },
-  "main": "./main.cjs",
-  "module": "./main.mjs",
-  "types": "./main.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "exports": {
-    "*": {
-      "import": "./*.mjs",
-      "require": "./*.cjs",
+    ".": {
+      "default": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./*.js": {
+      "default": "./*.js",
       "types": "./*.d.ts"
     }
   },
