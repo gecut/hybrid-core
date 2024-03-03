@@ -11,6 +11,7 @@
   "references": [
     // packages
     {"path": "./packages/types"},
+    {"path": "./packages/utilities"},
 
     // demo
     {"path": "./demo"}

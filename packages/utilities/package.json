@@ -1,0 +1,47 @@
+{
+  "name": "@gecut/utilities",
+  "version": "5.0.1-pre.0",
+  "type": "module",
+  "description": "The ultimate utility toolkit from Gecut Company, crafted with TypeScript for optimal speed and efficiency. Designed to boost productivity with a suite of fast and optimized tools.",
+  "keywords": [
+    "gecut",
+    "utilities",
+    "typescript",
+    "performance",
+    "optimization",
+    "toolkit",
+    "productivity",
+    "fast",
+    "efficient",
+    "development"
+  ],
+  "author": {
+    "name": "S. MohammadMahdi Zamanian",
+    "email": "dev@mm25zamanain.ir",
+    "url": "https://mm25zamanain.ir"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gecut/hybrid-core",
+    "directory": "packages/utilities"
+  },
+  "exports": {
+    "./*.js": {
+      "default": "./*.js",
+      "types": "./*.d.ts"
+    }
+  },
+  "files": [
+    "**/*.{js,mjs,cjs,map,d.ts,html,md}"
+  ],
+  "dependencies": {
+    "@gecut/types": "workspace:^"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24"
+  }
+}
