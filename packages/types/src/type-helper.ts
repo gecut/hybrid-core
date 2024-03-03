@@ -5,7 +5,7 @@ export type * from 'type-fest';
 export type Constructor<T> = new (...args: any[]) => T;
 
 export type MaybePromise<T> = T | Promise<T>;
-export type SingleOrArray<T> = T | Array<T>;
+export type SingleOrArray<T> = T | T[];
 
 export type OmitFirstParam<F> = F extends (x: any, ...args: infer A) => infer R
   ? (...args: A) => R
@@ -38,17 +38,15 @@ export type Stringifyable =
   | null
   | undefined
   | { [P: string]: Stringifyable }
-  | Array<Stringifyable>;
+  | Stringifyable[];
 
-export interface StringifyableRecord {
-  [P: string]: Stringifyable;
-}
+export type StringifyableRecord = Record<string, Stringifyable>;
 
 export type Prop<T, K> = K extends keyof T ? T[K] : never;
 
 export type Values<T> = T[keyof T];
 export type Keys<T> = keyof T;
-export type ArrayValues<T extends Readonly<Array<any>>> = T[number];
-export type ArrayItems<T> = T extends Array<infer K> ? K : T;
+export type ArrayValues<T extends Readonly<any[]>> = T[number];
+export type ArrayItems<T> = T extends (infer K)[] ? K : T;
 
 export type UnknownRecord<T = unknown> = Record<string, T>;
