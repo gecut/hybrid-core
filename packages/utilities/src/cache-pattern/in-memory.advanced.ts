@@ -1,7 +1,7 @@
 import {InMemorySimpleCache} from './in-memory.simple';
 
 export class InMemoryAdvancedCache<T> extends InMemorySimpleCache<T> {
-  protected expiresMap: Map<string, number> = new Map();
+  protected expiresMap = new Map<string, number>();
 
   override set(key: string, value: T): void;
   override set(key: string, value: T, ttlMS?: number): void {

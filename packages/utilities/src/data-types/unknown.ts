@@ -22,7 +22,8 @@ export const unknownUtils = {
             return false;
           }
         }
-      } else {
+      }
+      else {
         for (const key of aKeys) {
           if (!bKeys.includes(key)) {
             return false;

@@ -29,7 +29,8 @@ function writeiOS(text: string) {
       copyToClipboard();
 
       resolve();
-    } catch (error) {
+    }
+    catch (error) {
       reject(error);
     }
   });
@@ -39,7 +40,8 @@ function write(text: string) {
   return new Promise<void>((resolve, reject) => {
     if ('clipboard' in navigator) {
       navigator.clipboard.writeText(text).then(resolve).catch(reject);
-    } else {
+    }
+    else {
       reject();
     }
   });

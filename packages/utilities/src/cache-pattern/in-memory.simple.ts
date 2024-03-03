@@ -1,6 +1,6 @@
 export class InMemorySimpleCache<T> {
   protected cache: Record<string, T> = {};
-  protected keysMap: Map<string, boolean> = new Map();
+  protected keysMap = new Map<string, boolean>();
 
   get(key: string): T | undefined {
     return this.cache[key];

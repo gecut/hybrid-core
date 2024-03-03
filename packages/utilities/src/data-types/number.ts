@@ -2,7 +2,10 @@ import type {Nullable} from '@gecut/types/type-helper.js';
 
 export const numberUtils = {
   is(value: unknown) {
-    return (typeof value === 'number' && isFinite(value)) || (typeof value === 'string' && value.trim() !== '' && !isNaN(Number(value)));
+    return (
+      (typeof value === 'number' && isFinite(value)) ||
+      (typeof value === 'string' && value.trim() !== '' && !isNaN(Number(value)))
+    );
   },
   sanitizer<T extends Nullable<number>>(data: T): NonNullable<T> {
     return Number(data ?? 0) as NonNullable<T>;
