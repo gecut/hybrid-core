@@ -10,7 +10,8 @@
   "exclude": [],
   "references": [
     // packages
-    
+    {"path": "./packages/types"},
+
     // demo
     {"path": "./demo"}
   ]

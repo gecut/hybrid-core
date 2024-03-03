@@ -1,0 +1,45 @@
+{
+  "name": "@gecut/types",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Internal types for Gecut Company",
+  "keywords": [
+    "gecut",
+    "internal",
+    "types",
+    "typescript"
+  ],
+  "packageManager": "yarn@4.1.0",
+  "author": {
+    "name": "S. MohammadMahdi Zamanian",
+    "email": "dev@mm25zamanain.ir",
+    "url": "https://mm25zamanain.ir"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gecut/hybrid-core",
+    "directory": "packages/types"
+  },
+  "main": "./main.cjs",
+  "module": "./main.mjs",
+  "types": "./main.d.ts",
+  "exports": {
+    "*": {
+      "import": "./*.mjs",
+      "require": "./*.cjs",
+      "types": "./*.d.ts"
+    }
+  },
+  "files": [
+    "**/*.{js,mjs,cjs,map,d.ts,html,md}"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "lit": "^3.1.2",
+    "type-fest": "^4.10.2"
+  }
+}
