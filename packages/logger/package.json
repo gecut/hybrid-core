@@ -1,0 +1,43 @@
+{
+  "name": "@gecut/logger",
+  "version": "1.2.4",
+  "type": "module",
+  "author": {
+    "name": "S. MohammadMahdi Zamanian",
+    "email": "mm25zamanian@gmail.com",
+    "url": "https://mm25zamanain.ir"
+  },
+  "description": "Fancy colorful console debugger with custom scope written in tiny TypeScript, ES module.",
+  "keywords": [
+    "log",
+    "logger",
+    "console",
+    "debug",
+    "typescript",
+    "esm",
+    "gecut"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "logger.js",
+  "types": "logger.d.ts",
+  "exports": {
+    ".": {
+      "default": "./logger.js",
+      "types": "./logger.d.ts"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gecut/hybrid-core",
+    "directory": "packages/logger"
+  },
+  "bugs": {
+    "url": "https://github.com/gecut/hybrid-core/issues"
+  },
+  "dependencies": {
+    "@gecut/utilities": "workspace:^"
+  }
+}

@@ -92,6 +92,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gecut/logger@workspace:packages/logger":
+  version: 0.0.0-use.local
+  resolution: "@gecut/logger@workspace:packages/logger"
+  dependencies:
+    "@gecut/utilities": "workspace:^"
+  languageName: unknown
+  linkType: soft
+
 "@gecut/types@workspace:^, @gecut/types@workspace:packages/types":
   version: 0.0.0-use.local
   resolution: "@gecut/types@workspace:packages/types"
@@ -102,7 +110,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@gecut/utilities@workspace:packages/utilities":
+"@gecut/utilities@workspace:^, @gecut/utilities@workspace:packages/utilities":
   version: 0.0.0-use.local
   resolution: "@gecut/utilities@workspace:packages/utilities"
   dependencies:
