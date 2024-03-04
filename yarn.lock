@@ -92,11 +92,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gecut/logger@workspace:packages/logger":
+"@gecut/logger@workspace:^, @gecut/logger@workspace:packages/logger":
   version: 0.0.0-use.local
   resolution: "@gecut/logger@workspace:packages/logger"
   dependencies:
     "@gecut/utilities": "workspace:^"
+  languageName: unknown
+  linkType: soft
+
+"@gecut/signal@workspace:packages/signal":
+  version: 0.0.0-use.local
+  resolution: "@gecut/signal@workspace:packages/signal"
+  dependencies:
+    "@gecut/logger": "workspace:^"
   languageName: unknown
   linkType: soft
 

@@ -1,0 +1,44 @@
+{
+  "type": "module",
+  "name": "@gecut/signal",
+  "description": "Experience the pinnacle of high-performance, memory-safe signal architecture with our TypeScript-based npm package—easy to use and perfect for micro-component systems",
+  "version": "1.2.4",
+  "license": "MIT",
+  "keywords": [
+    "High-performance",
+    "Signal architecture",
+    "Micro-component",
+    "TypeScript",
+    "Memory-safe",
+    "Super fast",
+    "User-friendly",
+    "Efficient",
+    "Scalable",
+    "Modular design"
+  ],
+  "main": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "default": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/gecut/hybrid-core/issues",
+    "email": "dev@gecut.ir"
+  },
+  "author": {
+    "name": "S. MohammadMahdi Zamanian",
+    "url": "https://mm25zamanian.ir",
+    "email": "mm25zamanian@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gecut/hybrid-core",
+    "directory": "packages/signal"
+  },
+  "dependencies": {
+    "@gecut/logger": "workspace:^"
+  }
+}
