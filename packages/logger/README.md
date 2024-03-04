@@ -1,4 +1,4 @@
-# Gecut Logger
+# @gecut/logger
 
 Gecut Logger is a flexible and colorful logging tool built to enhance your debugging experience for both Node.js and browser-based JavaScript applications. With environment-aware functionalities and stylish output, Gecut Logger helps you to keep track of your application's behavior in an organized and visually appealing way.
 
