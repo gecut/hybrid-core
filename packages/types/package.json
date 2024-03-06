@@ -23,12 +23,12 @@
     "url": "https://github.com/gecut/hybrid-core",
     "directory": "packages/types"
   },
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "types.js",
+  "types": "types.d.ts",
   "exports": {
     ".": {
-      "default": "./index.js",
-      "types": "./index.d.ts"
+      "default": "./types.js",
+      "types": "./types.d.ts"
     },
     "./*.js": {
       "default": "./*.js",
