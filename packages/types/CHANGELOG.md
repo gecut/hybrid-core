@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1-alpha.0](https://github.com/gecut/hybrid-core/compare/@gecut/types@2.1.0...@gecut/types@2.1.1-alpha.0) (2024-03-06)
+
+### Bug Fixes
+
+* **types:** exports path ([4c10dc8](https://github.com/gecut/hybrid-core/commit/4c10dc82b8336b2663c604e55ca90b497ebef6be)) by @MM25Zamanian
+
 # [2.1.0](https://github.com/gecut/hybrid-core/compare/@gecut/types@2.0.0...@gecut/types@2.1.0) (2024-03-03)
 
 ### Bug Fixes
