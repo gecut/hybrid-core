@@ -114,7 +114,7 @@ __metadata:
   dependencies:
     "@types/node": "npm:^20.11.16"
     lit: "npm:^3.1.2"
-    type-fest: "npm:^4.10.2"
+    type-fest: "npm:^4.11.1"
   languageName: unknown
   linkType: soft
 
@@ -6757,7 +6757,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^4.10.2, type-fest@npm:^4.2.0, type-fest@npm:^4.6.0":
+"type-fest@npm:^4.11.1":
+  version: 4.11.1
+  resolution: "type-fest@npm:4.11.1"
+  checksum: 10c0/8cb4a31bdb2f6b34b4cc7b83dffbfc69d4fc1693f5ddbfd7f7f694be4fad8e4db358185485bd7109a24eaa219d65a4776251c6a04b8bb27f135ccf4dff0ba1d2
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^4.2.0, type-fest@npm:^4.6.0":
   version: 4.10.3
   resolution: "type-fest@npm:4.10.3"
   checksum: 10c0/b6b1e22c40221fef3f5f03bcb06087731fe15a9d762863ab47af301d666a5957d02c4ea7f0f873a367797d3661a65bc2d210faa7288dacca53d9bc310973bcc3
