@@ -16,12 +16,12 @@
     "Scalable",
     "Modular design"
   ],
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "signal.js",
+  "types": "signal.d.ts",
   "exports": {
     ".": {
-      "default": "./index.js",
-      "types": "./index.d.ts"
+      "default": "./signal.js",
+      "types": "./signal.d.ts"
     }
   },
   "bugs": {
