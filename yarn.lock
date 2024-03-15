@@ -180,15 +180,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna-lite/changed@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "@lerna-lite/changed@npm:3.3.0"
+"@lerna-lite/changed@npm:^3.3.1":
+  version: 3.3.1
+  resolution: "@lerna-lite/changed@npm:3.3.1"
   dependencies:
-    "@lerna-lite/cli": "npm:3.3.0"
-    "@lerna-lite/core": "npm:3.3.0"
-    "@lerna-lite/list": "npm:3.3.0"
-    "@lerna-lite/listable": "npm:3.3.0"
-  checksum: 10c0/10dd5c9fbec6cfe2d6c16c13e3276cabefb6e9e8f768da88d638b9f2c95970f5d3e928fff77ee4683ba98c5549929df1cfa82af3d6074ef6f7ee43f0a364bb9c
+    "@lerna-lite/cli": "npm:3.3.1"
+    "@lerna-lite/core": "npm:3.3.1"
+    "@lerna-lite/list": "npm:3.3.1"
+    "@lerna-lite/listable": "npm:3.3.1"
+  checksum: 10c0/b9448bb656b2097807ca65707306e26d5cbe52c64176ca05434522630cecbec8cb65c374ca22e53c243654ab057862e994065072890a38ca8f13ae7a19a00647
   languageName: node
   linkType: hard
 
@@ -394,26 +394,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna-lite/list@npm:3.3.0":
-  version: 3.3.0
-  resolution: "@lerna-lite/list@npm:3.3.0"
+"@lerna-lite/list@npm:3.3.1":
+  version: 3.3.1
+  resolution: "@lerna-lite/list@npm:3.3.1"
   dependencies:
-    "@lerna-lite/cli": "npm:3.3.0"
-    "@lerna-lite/core": "npm:3.3.0"
-    "@lerna-lite/filter-packages": "npm:3.3.0"
-    "@lerna-lite/listable": "npm:3.3.0"
-  checksum: 10c0/80481bf9f80c02f871ed53d0565e6cc28d5d009151f5f922df5463d8736403ee526336e8469f5826d845db403e9356903d978f55ebafe3de419cfc4789a72807
+    "@lerna-lite/cli": "npm:3.3.1"
+    "@lerna-lite/core": "npm:3.3.1"
+    "@lerna-lite/filter-packages": "npm:3.3.1"
+    "@lerna-lite/listable": "npm:3.3.1"
+  checksum: 10c0/8abfbbdc863074ca5df7437afd90863185af95786bedcd1265fa20371e656c7613bc5275a413ac147f811a805907fd60b93c6c3ce601538ea098c9568ca98042
   languageName: node
   linkType: hard
 
-"@lerna-lite/listable@npm:3.3.0":
-  version: 3.3.0
-  resolution: "@lerna-lite/listable@npm:3.3.0"
+"@lerna-lite/listable@npm:3.3.1":
+  version: 3.3.1
+  resolution: "@lerna-lite/listable@npm:3.3.1"
   dependencies:
-    "@lerna-lite/core": "npm:3.3.0"
+    "@lerna-lite/core": "npm:3.3.1"
     chalk: "npm:^5.3.0"
     columnify: "npm:^1.6.0"
-  checksum: 10c0/3a64e6adf89d986b8690aa65786e69fa843216d1fdf5da25c16ccd4e0413076f795153b3d9f26f563d30349e446e85d8a6adf93d2c1f3467069f8b3a80047a27
+  checksum: 10c0/23e4234d11db255b1aaa20c60c862b4ce59ae5c29037b8471c7371b577a5155646b3876737cb8d0ee52dfcd756d81aa232a245d18e4afa8feb347779b138f26a
   languageName: node
   linkType: hard
 
@@ -3852,7 +3852,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "hybrid-core@workspace:."
   dependencies:
-    "@lerna-lite/changed": "npm:^3.3.0"
+    "@lerna-lite/changed": "npm:^3.3.1"
     "@lerna-lite/cli": "npm:^3.3.1"
     "@lerna-lite/diff": "npm:^3.3.1"
     "@lerna-lite/exec": "npm:^3.3.1"
