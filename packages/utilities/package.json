@@ -42,6 +42,6 @@
     "@gecut/types": "workspace:^"
   },
   "devDependencies": {
-    "@types/node": "^20.11.24"
+    "@types/node": "^20.11.27"
   }
 }
