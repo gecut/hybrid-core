@@ -348,17 +348,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna-lite/filter-packages@npm:3.3.0":
-  version: 3.3.0
-  resolution: "@lerna-lite/filter-packages@npm:3.3.0"
-  dependencies:
-    "@lerna-lite/core": "npm:3.3.0"
-    multimatch: "npm:^7.0.0"
-    npmlog: "npm:^7.0.1"
-  checksum: 10c0/ac8aba33171fff0568beffdf4cc9a693d2042bc96ca6069fd0062f0dd9b367c676826e0df91c667ab1ff77b6c136895165892ed4dda7b4b00432cdd5e4fc243b
-  languageName: node
-  linkType: hard
-
 "@lerna-lite/filter-packages@npm:3.3.1":
   version: 3.3.1
   resolution: "@lerna-lite/filter-packages@npm:3.3.1"
@@ -3868,7 +3857,7 @@ __metadata:
     eslint-plugin-import: "npm:^2.29.1"
     npm-run-all: "npm:^4.1.5"
     prettier: "npm:^3.2.5"
-    typescript: "npm:^5.3.3"
+    typescript: "npm:^5.4.4"
   languageName: unknown
   linkType: soft
 
@@ -6986,23 +6975,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.3.3":
-  version: 5.3.3
-  resolution: "typescript@npm:5.3.3"
+"typescript@npm:^5.4.4":
+  version: 5.4.4
+  resolution: "typescript@npm:5.4.4"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/e33cef99d82573624fc0f854a2980322714986bc35b9cb4d1ce736ed182aeab78e2cb32b385efa493b2a976ef52c53e20d6c6918312353a91850e2b76f1ea44f
+  checksum: 10c0/4d8de0291204ed61ca97ad0cba2ce064e09c4988ca1c451c787e4653ba76296ba35177a52694e8a00cf4ef899d0ee83338663b926d8b7d55167ff0ba81549999
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.3.3#optional!builtin<compat/typescript>":
-  version: 5.3.3
-  resolution: "typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"
+"typescript@patch:typescript@npm%3A^5.4.4#optional!builtin<compat/typescript>":
+  version: 5.4.4
+  resolution: "typescript@patch:typescript@npm%3A5.4.4#optional!builtin<compat/typescript>::version=5.4.4&hash=d69c25"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/1d0a5f4ce496c42caa9a30e659c467c5686eae15d54b027ee7866744952547f1be1262f2d40de911618c242b510029d51d43ff605dba8fb740ec85ca2d3f9500
+  checksum: 10c0/413a0714a2b554bef8d39a386e5d25df22c625dd677d7260c1a08625016e46ce5f79dae0812641a22ab37c905370b407dc6838e11d4f10845821127d42221876
   languageName: node
   linkType: hard
 
