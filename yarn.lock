@@ -114,7 +114,7 @@ __metadata:
   dependencies:
     "@types/node": "npm:^20.11.27"
     lit: "npm:^3.1.2"
-    type-fest: "npm:^4.12.0"
+    type-fest: "npm:^4.18.1"
   languageName: unknown
   linkType: soft
 
@@ -345,17 +345,6 @@ __metadata:
     npmlog: "npm:^7.0.1"
     p-map: "npm:^7.0.1"
   checksum: 10c0/3f97dc0b2f7b2976478445009dd529dfef3967e708724126dc064be6d615747e9f2c6209b691a8dd881e4e8837197217342be79e6db087f5c1bbabf9c1ead300
-  languageName: node
-  linkType: hard
-
-"@lerna-lite/filter-packages@npm:3.3.0":
-  version: 3.3.0
-  resolution: "@lerna-lite/filter-packages@npm:3.3.0"
-  dependencies:
-    "@lerna-lite/core": "npm:3.3.0"
-    multimatch: "npm:^7.0.0"
-    npmlog: "npm:^7.0.1"
-  checksum: 10c0/ac8aba33171fff0568beffdf4cc9a693d2042bc96ca6069fd0062f0dd9b367c676826e0df91c667ab1ff77b6c136895165892ed4dda7b4b00432cdd5e4fc243b
   languageName: node
   linkType: hard
 
@@ -6901,10 +6890,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^4.12.0":
-  version: 4.12.0
-  resolution: "type-fest@npm:4.12.0"
-  checksum: 10c0/00a7a178d98974449a48f2f2fab1ee33c5ead38fb85eee284de0217de824416e6cbf6dce5d55e12a5d9ac1b557bff96f83e345a2c5983b56619095aba6743625
+"type-fest@npm:^4.18.1":
+  version: 4.18.1
+  resolution: "type-fest@npm:4.18.1"
+  checksum: 10c0/f81c82548a1f8c107fb286661c4d0caf5ed9c9842050dc5d417326a6208ddc67e04fa30faa9f948308a7eb164497f138fe5035e3f305c87a3ba8e7e0ce2e38c6
   languageName: node
   linkType: hard
 
