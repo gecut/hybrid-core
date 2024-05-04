@@ -39,6 +39,7 @@
     "**/*.{js,mjs,cjs,map,d.ts,html,md}"
   ],
   "dependencies": {
+    "@gecut/logger": "workspace:^",
     "@gecut/types": "workspace:^"
   },
   "devDependencies": {
