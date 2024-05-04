@@ -14,7 +14,7 @@ export class GecutLogger {
 
     this.initial();
 
-    if (DEV_MODE) {
+    if (this.devMode) {
       this.initialDevelopments();
     }
   }
