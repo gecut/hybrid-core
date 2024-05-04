@@ -122,6 +122,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@gecut/utilities@workspace:packages/utilities"
   dependencies:
+    "@gecut/logger": "workspace:^"
     "@gecut/types": "workspace:^"
     "@types/node": "npm:^20.11.27"
   languageName: unknown
@@ -345,17 +346,6 @@ __metadata:
     npmlog: "npm:^7.0.1"
     p-map: "npm:^7.0.1"
   checksum: 10c0/3f97dc0b2f7b2976478445009dd529dfef3967e708724126dc064be6d615747e9f2c6209b691a8dd881e4e8837197217342be79e6db087f5c1bbabf9c1ead300
-  languageName: node
-  linkType: hard
-
-"@lerna-lite/filter-packages@npm:3.3.0":
-  version: 3.3.0
-  resolution: "@lerna-lite/filter-packages@npm:3.3.0"
-  dependencies:
-    "@lerna-lite/core": "npm:3.3.0"
-    multimatch: "npm:^7.0.0"
-    npmlog: "npm:^7.0.1"
-  checksum: 10c0/ac8aba33171fff0568beffdf4cc9a693d2042bc96ca6069fd0062f0dd9b367c676826e0df91c667ab1ff77b6c136895165892ed4dda7b4b00432cdd5e4fc243b
   languageName: node
   linkType: hard
 
@@ -3458,6 +3448,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gecut-demo@workspace:demo"
   dependencies:
+    "@gecut/logger": "workspace:^"
+    "@gecut/utilities": "workspace:^"
     "@types/node": "npm:^20.11.27"
   languageName: unknown
   linkType: soft
