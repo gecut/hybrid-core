@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0](https://github.com/gecut/hybrid-core/compare/@gecut/utilities@5.1.1-alpha.0...@gecut/utilities@5.2.0) (2024-5-4)
+
+### Features
+
+* **utilities/queue:** new utility ([b6dac24](https://github.com/gecut/hybrid-core/commit/b6dac24351eb021ea8e69565019621059bde9041)) by @MM25Zamanian
+* **utilities:** queue utility ([9d1ebcf](https://github.com/gecut/hybrid-core/commit/9d1ebcfa63c8e6e2eb51fd93587045ac17a4a68f)) by @MM25Zamanian
+
 ## [5.1.1-alpha.0](https://github.com/gecut/hybrid-core/compare/@gecut/utilities@5.1.0...@gecut/utilities@5.1.1-alpha.0) (2024-03-06)
 
 **Note:** Version bump only for package @gecut/utilities
