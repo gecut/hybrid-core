@@ -1,5 +1,3 @@
-import {GecutLogger} from '@gecut/logger';
-
 import {uid} from './uid';
 import {untilIdle, untilMS, untilNextFrame} from './wait/wait';
 
@@ -11,20 +9,13 @@ export class GecutQueue {
    * Creates a new GecutQueue instance
    * @param {string} name - The name of the queue
    * @param {('animationFrame' | 'idleCallback' | number)} delayPeriod - The delay period for the queue
-   * @param {GecutLogger} [logger] - The logger instance (optional)
    */
-  constructor(name: string, delayPeriod: 'animationFrame' | 'idleCallback' | number, logger?: GecutLogger) {
+  constructor(name: string, delayPeriod: 'animationFrame' | 'idleCallback' | number) {
     /**
      * The name of the queue
      * @type {string}
      */
     this.name = name;
-
-    /**
-     * The logger instance
-     * @type {GecutLogger}
-     */
-    this.logger = logger ?? new GecutLogger(`queue/${name}`);
 
     /**
      * The delay period function
@@ -34,7 +25,6 @@ export class GecutQueue {
   }
 
   name: string;
-  private logger: GecutLogger;
   private delayPeriod: () => Promise<unknown>;
 
   /**
@@ -49,23 +39,28 @@ export class GecutQueue {
    */
   private values = new Map<string, unknown>();
 
+  private runningId?: string;
+
   /**
    * Pushes a new promise to the queue
-   * @param {Promise<unknown>} func - The promise to push
+   * @param {Promise<unknown>} promise - The promise to push
    * @param {string} [id] - The optional id for the promise
    * @returns {{ id: string }} - The id of the pushed promise
    */
-  push(func: Promise<unknown>, id?: string): {id: string} {
+  push(promise: Promise<unknown>, id?: string): {id: string} {
     id ??= uid();
 
     this.queue.set(
       id,
       this.waitForAllFinish()
         .then(() => this.delayPeriod())
-        .then(() => func)
-        .then((value) => {
-          this.logger.methodFull?.(id!, {}, value);
+        .then(() => {
+          this.runningId = id;
 
+          return promise;
+        })
+        .then((value) => {
+          this.runningId = undefined;
           this.queue.delete(id!);
           this.values.set(id!, value);
 
@@ -81,12 +76,12 @@ export class GecutQueue {
    * @param {string} id - The id of the promise
    * @returns {Promise<unknown>} - The promise value
    */
-  getValue(id: string): Promise<unknown> {
+  getValue<T>(id: string): T | Promise<T> {
     if (this.values.has(id)) {
-      return Promise.resolve(this.values.get(id));
+      return this.values.get(id) as T;
     }
 
-    return this.queue.get(id) ?? Promise.resolve(undefined);
+    return (this.queue.get(id) ?? Promise.resolve(undefined)) as Promise<T>;
   }
 
   /**
@@ -95,7 +90,11 @@ export class GecutQueue {
    * @returns {boolean} - Whether the promise is running
    */
   isRunning(id: string): boolean {
-    return this.queue.has(id);
+    return this.runningId === id;
+  }
+
+  isFinished(id: string): boolean {
+    return this.values.has(id);
   }
 
   /**
