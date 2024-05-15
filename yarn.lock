@@ -112,7 +112,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@gecut/types@workspace:packages/types"
   dependencies:
-    "@types/node": "npm:^20.11.27"
+    "@types/node": "npm:^20.12.12"
     lit: "npm:^3.1.2"
     type-fest: "npm:^4.12.0"
   languageName: unknown
@@ -123,7 +123,7 @@ __metadata:
   resolution: "@gecut/utilities@workspace:packages/utilities"
   dependencies:
     "@gecut/types": "workspace:^"
-    "@types/node": "npm:^20.11.27"
+    "@types/node": "npm:^20.12.12"
   languageName: unknown
   linkType: soft
 
@@ -1290,12 +1290,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.11.27":
-  version: 20.11.27
-  resolution: "@types/node@npm:20.11.27"
+"@types/node@npm:^20.12.12":
+  version: 20.12.12
+  resolution: "@types/node@npm:20.12.12"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/ec40bea80c60a12b39bd0da9b16333237a84c67ae83c8aa382b88381ae3948943bf6af969442e209270ad3e109f301a6b01ab243f80bd0e69673a877425f9418
+  checksum: 10c0/f374b763c744e8f16e4f38cf6e2c0eef31781ec9228c9e43a6f267880fea420fab0a238b59f10a7cb3444e49547c5e3785787e371fc242307310995b21988812
   languageName: node
   linkType: hard
 
@@ -3449,7 +3449,7 @@ __metadata:
   dependencies:
     "@gecut/logger": "workspace:^"
     "@gecut/utilities": "workspace:^"
-    "@types/node": "npm:^20.11.27"
+    "@types/node": "npm:^20.12.12"
   languageName: unknown
   linkType: soft
 
@@ -3850,7 +3850,7 @@ __metadata:
     "@lerna-lite/publish": "npm:^3.3.1"
     "@lerna-lite/run": "npm:^3.3.1"
     "@lerna-lite/version": "npm:^3.3.0"
-    "@types/node": "npm:^20.11.27"
+    "@types/node": "npm:^20.12.12"
     "@typescript-eslint/eslint-plugin": "npm:^7.2.0"
     "@typescript-eslint/parser": "npm:^7.2.0"
     "@web/dev-server": "npm:^0.4.3"
