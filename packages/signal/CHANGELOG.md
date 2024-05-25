@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.2](https://github.com/gecut/hybrid-core/compare/@gecut/signal@2.1.1...@gecut/signal@2.1.2) (2024-5-25)
+
+**Note:** Version bump only for package @gecut/signal
+
 ## [2.1.1](https://github.com/gecut/hybrid-core/compare/@gecut/signal@2.1.0...@gecut/signal@2.1.1) (2024-5-9)
 
 **Note:** Version bump only for package @gecut/signal
