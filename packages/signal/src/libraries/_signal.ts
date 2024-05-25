@@ -1,6 +1,6 @@
-import { GecutLogger } from '@gecut/logger';
+import {GecutLogger} from '@gecut/logger';
 
-import type { SubscribeOptions, Subscriber } from '../type.js';
+import type {SubscribeOptions, Subscriber} from '../type.js';
 
 /**
  * A Signal object allows for subscribing to notifications with callbacks.
@@ -17,7 +17,7 @@ export abstract class Signal<T> {
     options: Required<SubscribeOptions>;
   }[] = [];
 
-  protected value?: T;
+  protected value: T | undefined;
   protected hasDispatched = false;
   protected log: GecutLogger;
 
@@ -26,11 +26,9 @@ export abstract class Signal<T> {
    * @param {Subscriber<T>} callback - The callback to unsubscribe.
    */
   unsubscribe(callback: Subscriber<T>): void {
-    this.log.methodArgs?.('unsubscribe', { callback });
+    this.log.methodArgs?.('unsubscribe', {callback});
 
-    this.subscribers = this.subscribers.filter(
-      (subscriber) => subscriber.callback !== callback
-    );
+    this.subscribers = this.subscribers.filter((subscriber) => subscriber.callback !== callback);
   }
 
   /**
@@ -40,36 +38,28 @@ export abstract class Signal<T> {
    * @return {unknown} The `subscribe` method returns an object with a single property `unsubscribe`, which is a
    * function that can be called to unsubscribe from the subscription.
    */
-  subscribe(
-    callback: Subscriber<T>,
-    options: SubscribeOptions = {}
-  ): { unsubscribe: () => void } {
+  subscribe(callback: Subscriber<T>, options: SubscribeOptions = {}): {unsubscribe: () => void} {
     const resolvedOptions: Required<SubscribeOptions> = {
       once: false,
       priority: 0,
       disabled: false,
       receivePrevious: false,
-      ...options
+      ...options,
     };
 
-    const newSubscriber = { callback, options: resolvedOptions };
+    const newSubscriber = {callback, options: resolvedOptions};
 
     this.log.methodArgs?.('subscribe', newSubscriber);
 
     this.subscribers.push(newSubscriber);
     this.subscribers.sort((a, b) => b.options.priority - a.options.priority);
 
-    if (
-      resolvedOptions.receivePrevious &&
-      this.hasDispatched &&
-      this.value &&
-      !resolvedOptions.disabled
-    ) {
+    if (resolvedOptions.receivePrevious && this.hasDispatched && this.value && !resolvedOptions.disabled) {
       callback(this.value);
     }
 
     return {
-      unsubscribe: this.unsubscribe.bind(this, callback)
+      unsubscribe: this.unsubscribe.bind(this, callback),
     };
   }
 
@@ -103,7 +93,7 @@ export abstract class Signal<T> {
       this.subscribe(resolve, {
         once: true,
         priority: 1_000,
-        receivePrevious: false
+        receivePrevious: false,
       });
     });
   }
