@@ -105,6 +105,7 @@ __metadata:
   resolution: "@gecut/signal@workspace:packages/signal"
   dependencies:
     "@gecut/logger": "workspace:^"
+    "@gecut/types": "workspace:^"
   languageName: unknown
   linkType: soft
 

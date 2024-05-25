@@ -51,8 +51,8 @@ export class ContextSignal<T> extends Signal<T> {
 
     const value = this.getValue();
 
-    if (value) {
-      this.setValue(value);
+    if (this.hasDispatched) {
+      this.setValue(value as T);
     }
   }
 }

@@ -39,6 +39,7 @@
     "directory": "packages/signal"
   },
   "dependencies": {
-    "@gecut/logger": "workspace:^"
+    "@gecut/logger": "workspace:^",
+    "@gecut/types": "workspace:^"
   }
 }
