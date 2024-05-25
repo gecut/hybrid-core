@@ -44,7 +44,7 @@ export class GecutLogger {
   timeEnd?: (label: string) => void;
 
   sub(domain: string, _devMode = this.devMode) {
-    return new GecutLogger(`${this.domain} ⬅️ ${domain}`, _devMode);
+    return new GecutLogger(`${this.domain} ⬅ ${domain}`, _devMode);
   }
 
   private static stabilizeDomain(domain: string): string {
