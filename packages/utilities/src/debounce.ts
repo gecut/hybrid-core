@@ -1,3 +1,11 @@
+import {
+  nextAnimationFrame,
+  nextIdleCallback,
+  cancelNextAnimationFrame,
+  cancelNextIdleCallback,
+  supported,
+} from './wait/polyfill';
+
 /**
  * The `debounce` function takes a function and a delay as arguments and returns a new function that
  * delays the execution of the original function until a certain amount of time has passed without any
@@ -30,13 +38,35 @@
  */
 export default function debounce<Args extends unknown[], Return>(
   func: (...args: Args) => Return,
-  delay: number,
-): () => void {
-  let timerId: NodeJS.Timeout;
+  delay: number | 'AnimationFrame' | 'IdleCallback',
+): (...args: Args) => void {
+  if (delay === 'AnimationFrame' && supported.requestAnimationFrame && supported.cancelAnimationFrame) {
+    let timerId: number;
 
-  return (...args: Args) => {
-    clearTimeout(timerId);
+    return (...args: Args) => {
+      cancelNextAnimationFrame(timerId);
 
-    timerId = setTimeout(() => func(...args), delay);
-  };
+      timerId = nextAnimationFrame(() => func(...args));
+    };
+  } else if (delay === 'IdleCallback' && supported.requestIdleCallback && supported.cancelIdleCallback) {
+    let timerId: number;
+
+    return (...args: Args) => {
+      cancelNextIdleCallback(timerId);
+
+      timerId = nextIdleCallback(() => func(...args));
+    };
+  } else {
+    let timerId: NodeJS.Timeout;
+
+    if (typeof delay !== 'number') {
+      delay = 0;
+    }
+
+    return (...args: Args) => {
+      clearTimeout(timerId);
+
+      timerId = setTimeout(() => func(...args), delay as number);
+    };
+  }
 }
