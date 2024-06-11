@@ -48,7 +48,8 @@ export default function debounce<Args extends unknown[], Return>(
 
       timerId = nextAnimationFrame(() => func(...args));
     };
-  } else if (delay === 'IdleCallback' && supported.requestIdleCallback && supported.cancelIdleCallback) {
+  }
+  else if (delay === 'IdleCallback' && supported.requestIdleCallback && supported.cancelIdleCallback) {
     let timerId: number;
 
     return (...args: Args) => {
@@ -56,7 +57,8 @@ export default function debounce<Args extends unknown[], Return>(
 
       timerId = nextIdleCallback(() => func(...args));
     };
-  } else {
+  }
+  else {
     let timerId: NodeJS.Timeout;
 
     if (typeof delay !== 'number') {
