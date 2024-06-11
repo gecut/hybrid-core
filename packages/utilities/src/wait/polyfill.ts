@@ -45,3 +45,22 @@ export const cancelNextIdleCallback: typeof globalThis.cancelIdleCallback =
   win['webkitCancelIdleCallback'] ||
   win['mozCancelIdleCallback'] ||
   cancelIdleCallbackFallback;
+
+export const supported = {
+  cancelIdleCallback: !!(win['cancelIdleCallback'] || win['webkitCancelIdleCallback'] || win['mozCancelIdleCallback']),
+  requestIdleCallback: !!(
+    win['requestIdleCallback'] ||
+    win['webkitRequestIdleCallback'] ||
+    win['mozRequestIdleCallback']
+  ),
+  cancelAnimationFrame: !!(
+    win['cancelAnimationFrame'] ||
+    win['webkitCancelAnimationFrame'] ||
+    win['mozCancelAnimationFrame']
+  ),
+  requestAnimationFrame: !!(
+    win['requestAnimationFrame'] ||
+    win['webkitRequestAnimationFrame'] ||
+    win['mozRequestAnimationFrame']
+  ),
+};
