@@ -72,7 +72,7 @@ export abstract class Signal<T> {
     this.__$debouncedDispatch(newValue);
   }
 
-  protected __$debouncedDispatch = debounce(this.__$dispatch, this.debounceConfig !== false ? this.debounceConfig : 0);
+  protected __$debouncedDispatch = debounce(this.__$dispatch.bind(this), this.debounceConfig !== false ? this.debounceConfig : 0);
   protected __$dispatch(newValue: T): void {
     for (const subscriber of this.subscribers) {
       if (subscriber && !subscriber.options.disabled) {
