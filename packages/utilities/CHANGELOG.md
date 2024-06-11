@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0](https://github.com/gecut/hybrid-core/compare/@gecut/utilities@5.2.1...@gecut/utilities@5.3.0) (2024-06-11)
+
+### Bug Fixes
+
+* all sources ([dea677b](https://github.com/gecut/hybrid-core/commit/dea677b4d05acb17964189beef485d413b6445bf)) by @MM25Zamanian
+
+### Features
+
+* **utilities/debounce:** more wait system ([1631453](https://github.com/gecut/hybrid-core/commit/1631453c31647d1135f3b084595d3b14fa56b5ec)) by @MM25Zamanian
+* **utilities/wait/polyfill:** `supported` object ([965b3a2](https://github.com/gecut/hybrid-core/commit/965b3a276d94ecd32dd4c4e1b0cf7e80997adf01)) by @MM25Zamanian
+
 ## [5.2.1](https://github.com/gecut/hybrid-core/compare/@gecut/utilities@5.2.0...@gecut/utilities@5.2.1) (2024-5-9)
 
 **Note:** Version bump only for package @gecut/utilities
