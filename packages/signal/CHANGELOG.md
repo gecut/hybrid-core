@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.1](https://github.com/gecut/hybrid-core/compare/@gecut/signal@2.2.0...@gecut/signal@2.2.1) (2024-06-11)
+
+### Bug Fixes
+
+* **signal:** debounce dispatch ([5b16108](https://github.com/gecut/hybrid-core/commit/5b1610870fc2182d9bc584f8b1953f323ebb5f04)) by @MM25Zamanian
+
 # [2.2.0](https://github.com/gecut/hybrid-core/compare/@gecut/signal@2.1.2...@gecut/signal@2.2.0) (2024-06-11)
 
 ### Features
