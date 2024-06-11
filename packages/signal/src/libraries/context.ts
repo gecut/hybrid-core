@@ -1,4 +1,4 @@
-import { Signal } from './_signal.js';
+import {Signal} from './_signal.js';
 
 export class ContextSignal<T> extends Signal<T> {
   constructor(name: string) {
@@ -16,14 +16,22 @@ export class ContextSignal<T> extends Signal<T> {
     return this.value;
   }
 
+  async requireValue(): Promise<T> {
+    const value = this.value ?? (await this.__$untilNewNotify());
+
+    this.log.methodFull?.('requireValue', {}, value);
+
+    return value;
+  }
+
   /**
    * The function sets a value and notifies any subscribers.
    * @param {T} value - The parameter "value" is of type T, which means it can be any type.
    */
   setValue(value: T): void {
-    this.log.methodArgs?.('setValue', { value });
+    this.log.methodArgs?.('setValue', {value});
 
-    super.__$notify(value);
+    this.__$notify(value);
   }
 
   /**
@@ -43,7 +51,7 @@ export class ContextSignal<T> extends Signal<T> {
   untilChange(): Promise<T> {
     this.log.method?.('untilChange');
 
-    return super.__$untilNewNotify();
+    return this.__$untilNewNotify();
   }
 
   renotify() {

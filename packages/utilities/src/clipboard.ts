@@ -47,4 +47,4 @@ function write(text: string) {
   });
 }
 
-export default { write: 'clipboard' in navigator ? write : writeiOS };
+export default {write: 'clipboard' in navigator ? write : writeiOS};

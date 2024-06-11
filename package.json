@@ -44,7 +44,7 @@
     "build:r": "lerna run build",
     "format": "run-s format:prettier format:eslint",
     "format:eslint": "yarn run lint:ts --fix",
-    "format:prettier": "prettier . --ignore-path .gitignore --write",
+    "format:prettier": "prettier . --ignore-path .prettierignore --write",
     "clean": "git clean -d -x -f --exclude=node_modules --exclude='*.env' --exclude=_data --exclude='.pnp*' --exclude=.yarn",
     "serve": "wds",
     "watch": "run-p 'watch:*' serve",

@@ -1,8 +1,6 @@
-import { isBrowser } from './browser-or-node';
+import {isBrowser} from './browser-or-node';
 
-type EnvReturn<T extends 'string' | 'number'> = T extends 'number'
-  ? number
-  : string;
+type EnvReturn<T extends 'string' | 'number'> = T extends 'number' ? number : string;
 
 export function env<T extends 'string' | 'number', K extends EnvReturn<T>>(
   name: keyof typeof process.env,

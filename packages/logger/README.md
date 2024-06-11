@@ -24,7 +24,7 @@ npm install @gecut/logger
 Getting started with Gecut Logger is straightforward:
 
 ```ts
-import { GecutLogger } from '@gecut/logger';
+import {GecutLogger} from '@gecut/logger';
 
 const logger = new GecutLogger('MyApp');
 
@@ -32,7 +32,7 @@ const logger = new GecutLogger('MyApp');
 logger.error('init', 'INIT_FAIL', 'Initialization failed due to an unknown error');
 
 // Warn with additional arguments
-logger.warning('loadData', 'INVALID_RESPONSE', 'Data response is invalid', { userId: 1 });
+logger.warning('loadData', 'INVALID_RESPONSE', 'Data response is invalid', {userId: 1});
 
 // Begin a timed operation (development mode only)
 logger.time?.('fetchData');
@@ -47,7 +47,7 @@ logger.timeEnd?.('fetchData');
 const logger = new GecutLogger('UIComponent');
 
 // Trace a method call and its arguments
-logger.methodArgs?.('render', { items: 5 });
+logger.methodArgs?.('render', {items: 5});
 
 // Log a property change
 logger.property?.('isVisible', true);

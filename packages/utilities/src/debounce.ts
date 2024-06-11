@@ -28,8 +28,10 @@
  * // Only the last input will be logged after a delay of 500ms
  * ```
  */
-export default function debounce<Args extends unknown[], Return>(func: (...args: Args) => Return,
-  delay: number): (() => void) {
+export default function debounce<Args extends unknown[], Return>(
+  func: (...args: Args) => Return,
+  delay: number,
+): () => void {
   let timerId: NodeJS.Timeout;
 
   return (...args: Args) => {

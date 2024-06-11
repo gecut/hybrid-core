@@ -1,4 +1,4 @@
-import { nextAnimationFrame, nextIdleCallback } from './polyfill';
+import {nextAnimationFrame, nextIdleCallback} from './polyfill';
 
 export async function untilMS(delayMS: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, delayMS));
@@ -16,7 +16,5 @@ export function untilEvent<T extends keyof HTMLElementEventMap>(
   element: HTMLElement,
   eventName: T,
 ): Promise<HTMLElementEventMap[T]> {
-  return new Promise((resolve) =>
-    element.addEventListener(eventName, resolve, { once: true, passive: true }),
-  );
+  return new Promise((resolve) => element.addEventListener(eventName, resolve, {once: true, passive: true}));
 }

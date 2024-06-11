@@ -19,10 +19,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* **signal:** exports path ([55dc9c0](https://github.com/gecut/hybrid-core/commit/55dc9c081cd266958c5e60aed84278c8024064ed)) by @MM25Zamanian
+- **signal:** exports path ([55dc9c0](https://github.com/gecut/hybrid-core/commit/55dc9c081cd266958c5e60aed84278c8024064ed)) by @MM25Zamanian
 
 # 2.0.0 (2024-03-04)
 
 ### Features
 
-* **signal:** new package ([e985df1](https://github.com/gecut/hybrid-core/commit/e985df19c9736b7a9f404ba63c88ba941df7c01b)) by @MM25Zamanian
+- **signal:** new package ([e985df1](https://github.com/gecut/hybrid-core/commit/e985df19c9736b7a9f404ba63c88ba941df7c01b)) by @MM25Zamanian

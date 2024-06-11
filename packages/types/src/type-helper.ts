@@ -7,9 +7,7 @@ export type Constructor<T> = new (...args: any[]) => T;
 export type MaybePromise<T> = T | Promise<T>;
 export type SingleOrArray<T> = T | T[];
 
-export type OmitFirstParam<F> = F extends (x: any, ...args: infer A) => infer R
-  ? (...args: A) => R
-  : never;
+export type OmitFirstParam<F> = F extends (x: any, ...args: infer A) => infer R ? (...args: A) => R : never;
 
 export type ArrowFunction<T = unknown> = () => T;
 
@@ -37,7 +35,7 @@ export type Stringifyable =
   | boolean
   | null
   | undefined
-  | { [P: string]: Stringifyable }
+  | {[P: string]: Stringifyable}
   | Stringifyable[];
 
 export type StringifyableRecord = Record<string, Stringifyable>;

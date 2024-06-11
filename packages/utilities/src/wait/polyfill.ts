@@ -3,9 +3,7 @@ type IndexableWindow = Record<string, any>;
 
 const win = globalThis as IndexableWindow;
 
-function requestAnimationFrameFallback(
-  callback: FrameRequestCallback,
-): ReturnType<typeof setTimeout> {
+function requestAnimationFrameFallback(callback: FrameRequestCallback): ReturnType<typeof setTimeout> {
   return setTimeout(() => callback(Date.now()), 1000 / 60);
 }
 

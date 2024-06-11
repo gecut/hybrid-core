@@ -15,8 +15,7 @@ export function detectOperatingSystem() {
   else if (userAgent.indexOf('Android') != -1) {
     operatingSystem = 'android';
   }
-  else if (userAgent.indexOf('Mac') != -1 ||
-    userAgent.indexOf('iPhone') != -1) {
+  else if (userAgent.indexOf('Mac') != -1 || userAgent.indexOf('iPhone') != -1) {
     operatingSystem = 'ios';
   }
 
