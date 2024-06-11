@@ -1,4 +1,5 @@
 import {GecutLogger} from '@gecut/logger';
+import debounce from '@gecut/utilities/debounce.js';
 
 import type {SubscribeOptions, Subscriber} from '../type.js';
 
@@ -20,6 +21,7 @@ export abstract class Signal<T> {
   protected value: T | undefined;
   protected hasDispatched = false;
   protected log: GecutLogger;
+  protected debounceConfig: false | 'AnimationFrame' | 'IdleCallback' | number = false;
 
   /**
    * Unsubscribes a previously registered callback from the signal.
@@ -67,9 +69,10 @@ export abstract class Signal<T> {
     this.hasDispatched = true;
     this.value = newValue;
 
-    setTimeout(() => this.__$dispatch(newValue), 0);
+    this.__$debouncedDispatch(newValue);
   }
 
+  protected __$debouncedDispatch = debounce(this.__$dispatch, this.debounceConfig !== false ? this.debounceConfig : 0);
   protected __$dispatch(newValue: T): void {
     for (const subscriber of this.subscribers) {
       if (subscriber && !subscriber.options.disabled) {

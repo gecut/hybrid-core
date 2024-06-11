@@ -1,8 +1,10 @@
 import {Signal} from './_signal.js';
 
 export class ContextSignal<T> extends Signal<T> {
-  constructor(name: string) {
+  constructor(name: string, debounce: false | 'AnimationFrame' | 'IdleCallback' | number = false) {
     super(name, 'context');
+
+    this.debounceConfig = debounce;
   }
 
   /**
