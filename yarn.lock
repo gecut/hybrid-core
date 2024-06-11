@@ -106,6 +106,7 @@ __metadata:
   dependencies:
     "@gecut/logger": "workspace:^"
     "@gecut/types": "workspace:^"
+    "@gecut/utilities": "workspace:^"
   languageName: unknown
   linkType: soft
 

@@ -1,7 +1,7 @@
 {
   "name": "hybrid-core",
   "description": "",
-  "packageManager": "yarn@4.1.0",
+  "packageManager": "yarn@4.3.0",
   "author": "S. MohammadMahdi Zamanian <dev@mm25zamanain.ir> (https://mm25zamanian.ir)",
   "license": "MIT",
   "type": "module",
