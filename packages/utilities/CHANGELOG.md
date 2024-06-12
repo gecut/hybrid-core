@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.4.0](https://github.com/gecut/hybrid-core/compare/@gecut/utilities@5.3.0...@gecut/utilities@5.4.0) (2024-06-12)
+
+### Features
+
+* **utilities/envvm:** new utility ([48b8324](https://github.com/gecut/hybrid-core/commit/48b8324af345f393274eb315709c208f913255fe)) by @MM25Zamanian
+
 # [5.3.0](https://github.com/gecut/hybrid-core/compare/@gecut/utilities@5.2.1...@gecut/utilities@5.3.0) (2024-06-11)
 
 ### Bug Fixes
