@@ -7,13 +7,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* **signal:** debounce dispatch ([5b16108](https://github.com/gecut/hybrid-core/commit/5b1610870fc2182d9bc584f8b1953f323ebb5f04)) by @MM25Zamanian
+- **signal:** debounce dispatch ([5b16108](https://github.com/gecut/hybrid-core/commit/5b1610870fc2182d9bc584f8b1953f323ebb5f04)) by @MM25Zamanian
 
 # [2.2.0](https://github.com/gecut/hybrid-core/compare/@gecut/signal@2.1.2...@gecut/signal@2.2.0) (2024-06-11)
 
 ### Features
 
-* **signal:** add debounce feature ([6a50158](https://github.com/gecut/hybrid-core/commit/6a50158b8b3c814ac449db9d22d5cb5dc7c1c97a)) by @MM25Zamanian
+- **signal:** add debounce feature ([6a50158](https://github.com/gecut/hybrid-core/commit/6a50158b8b3c814ac449db9d22d5cb5dc7c1c97a)) by @MM25Zamanian
 
 ## [2.1.2](https://github.com/gecut/hybrid-core/compare/@gecut/signal@2.1.1...@gecut/signal@2.1.2) (2024-5-25)
 

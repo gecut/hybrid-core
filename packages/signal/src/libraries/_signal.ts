@@ -10,7 +10,7 @@ import type {SubscribeOptions, Subscriber} from '../type.js';
  */
 export abstract class Signal<T> {
   constructor(name: string, loggerPrefix = 'signal') {
-    this.log = new GecutLogger(`${loggerPrefix}: ${name}`);
+    this.__$log = new GecutLogger(`${loggerPrefix}: ${name}`);
   }
 
   protected subscribers: {
@@ -18,17 +18,17 @@ export abstract class Signal<T> {
     options: Required<SubscribeOptions>;
   }[] = [];
 
-  protected value: T | undefined;
-  protected hasDispatched = false;
-  protected log: GecutLogger;
-  protected debounceConfig: false | 'AnimationFrame' | 'IdleCallback' | number = false;
+  protected __$value: T | undefined;
+  protected __$hasDispatched = false;
+  protected __$log: GecutLogger;
+  protected __$debounceConfig: false | 'AnimationFrame' | 'IdleCallback' | number = false;
 
   /**
    * Unsubscribes a previously registered callback from the signal.
    * @param {Subscriber<T>} callback - The callback to unsubscribe.
    */
   unsubscribe(callback: Subscriber<T>): void {
-    this.log.methodArgs?.('unsubscribe', {callback});
+    this.__$log.methodArgs?.('unsubscribe', {callback});
 
     this.subscribers = this.subscribers.filter((subscriber) => subscriber.callback !== callback);
   }
@@ -51,13 +51,13 @@ export abstract class Signal<T> {
 
     const newSubscriber = {callback, options: resolvedOptions};
 
-    this.log.methodArgs?.('subscribe', newSubscriber);
+    this.__$log.methodArgs?.('subscribe', newSubscriber);
 
     this.subscribers.push(newSubscriber);
     this.subscribers.sort((a, b) => b.options.priority - a.options.priority);
 
-    if (resolvedOptions.receivePrevious && this.hasDispatched && this.value && !resolvedOptions.disabled) {
-      callback(this.value);
+    if (resolvedOptions.receivePrevious && this.__$hasDispatched && this.__$value && !resolvedOptions.disabled) {
+      callback(this.__$value);
     }
 
     return {
@@ -66,13 +66,16 @@ export abstract class Signal<T> {
   }
 
   protected __$notify(newValue: T): void {
-    this.hasDispatched = true;
-    this.value = newValue;
+    this.__$hasDispatched = true;
+    this.__$value = newValue;
 
     this.__$debouncedDispatch(newValue);
   }
 
-  protected __$debouncedDispatch = debounce(this.__$dispatch.bind(this), this.debounceConfig !== false ? this.debounceConfig : 0);
+  protected __$debouncedDispatch = debounce(
+    this.__$dispatch.bind(this),
+    this.__$debounceConfig !== false ? this.__$debounceConfig : 0,
+  );
   protected __$dispatch(newValue: T): void {
     for (const subscriber of this.subscribers) {
       if (subscriber && !subscriber.options.disabled) {
@@ -88,7 +91,7 @@ export abstract class Signal<T> {
    * Clear current data without notify subscribers.
    */
   protected __$clear(): void {
-    this.value = undefined;
+    this.__$value = undefined;
   }
 
   protected __$untilNewNotify(): Promise<T> {

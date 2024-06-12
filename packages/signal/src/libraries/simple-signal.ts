@@ -10,13 +10,13 @@ export class SimpleSignal<T> extends Signal<T> {
    * @param {T} newValue - The new value to notify the subscribers with.
    */
   notify(newValue: T): void {
-    this.log.methodArgs?.('notify', {newValue});
+    this.__$log.methodArgs?.('notify', {newValue});
 
     this.__$notify(newValue);
   }
 
   get nextValue(): Promise<T> {
-    this.log.method?.('nextValue');
+    this.__$log.method?.('nextValue');
 
     return this.__$untilNewNotify();
   }

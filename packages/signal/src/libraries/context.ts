@@ -4,7 +4,19 @@ export class ContextSignal<T> extends Signal<T> {
   constructor(name: string, debounce: false | 'AnimationFrame' | 'IdleCallback' | number = false) {
     super(name, 'context');
 
-    this.debounceConfig = debounce;
+    this.__$debounceConfig = debounce;
+  }
+
+  async requireValue(): Promise<T> {
+    const value = this.__$value ?? (await this.__$untilNewNotify());
+
+    this.__$log.methodFull?.('requireValue', {}, value);
+
+    return value;
+  }
+
+  functionalValue(func: (value: T | undefined) => T) {
+    this.value = func(this.value);
   }
 
   /**
@@ -12,26 +24,18 @@ export class ContextSignal<T> extends Signal<T> {
    *
    * @return {T | undefined} undefined if context not set before or expired.
    */
-  getValue(): T | undefined {
-    this.log.methodFull?.('getValue', {}, this.value);
+  get value(): T | undefined {
+    this.__$log.methodFull?.('getValue', {}, this.__$value);
 
-    return this.value;
-  }
-
-  async requireValue(): Promise<T> {
-    const value = this.value ?? (await this.__$untilNewNotify());
-
-    this.log.methodFull?.('requireValue', {}, value);
-
-    return value;
+    return this.__$value;
   }
 
   /**
    * The function sets a value and notifies any subscribers.
    * @param {T} value - The parameter "value" is of type T, which means it can be any type.
    */
-  setValue(value: T): void {
-    this.log.methodArgs?.('setValue', {value});
+  set value(value: T) {
+    this.__$log.methodArgs?.('setValue', {value});
 
     this.__$notify(value);
   }
@@ -40,7 +44,7 @@ export class ContextSignal<T> extends Signal<T> {
    * The "expire" function clears a cache.
    */
   expire(): void {
-    this.log.method?.('expire');
+    this.__$log.method?.('expire');
 
     super.__$clear();
   }
@@ -51,18 +55,18 @@ export class ContextSignal<T> extends Signal<T> {
    * @return {Promise<T>} The `untilChange()` function is returning a Promise of type `T`.
    */
   untilChange(): Promise<T> {
-    this.log.method?.('untilChange');
+    this.__$log.method?.('untilChange');
 
     return this.__$untilNewNotify();
   }
 
   renotify() {
-    this.log.method?.('renotify');
+    this.__$log.method?.('renotify');
 
-    const value = this.getValue();
+    const value = this.value;
 
-    if (this.hasDispatched) {
-      this.setValue(value as T);
+    if (this.__$hasDispatched) {
+      this.value = value as T;
     }
   }
 }
