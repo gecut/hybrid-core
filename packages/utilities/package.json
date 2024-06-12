@@ -39,7 +39,8 @@
     "**/*.{js,mjs,cjs,map,d.ts,html,md}"
   ],
   "dependencies": {
-    "@gecut/types": "workspace:^"
+    "@gecut/types": "workspace:^",
+    "change-case": "^5.4.4"
   },
   "devDependencies": {
     "@types/node": "^20.11.27"
