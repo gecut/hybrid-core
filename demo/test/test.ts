@@ -1,30 +1,18 @@
-import {GecutQueue} from '@gecut/utilities/queue.js';
-import {untilEvent, untilMS} from '@gecut/utilities/wait/wait.js';
+import {GecutEnvVM} from '@gecut/utilities/envvm.js';
 
-const queue = new GecutQueue('demo', 1500);
+const envVM = new GecutEnvVM('demo', {
+  time: Date.now(),
+  userToken: 'ooooo',
+});
 
-const f1 = queue.push(untilMS(5000), 'f1');
-const f2 = queue.push(untilEvent(document.body, 'dblclick'), 'f2');
-let timer = 0;
+console.log(envVM.get('time'));
+console.log(envVM.get('userToken'));
 
 setInterval(() => {
+  envVM.set('time', Date.now());
+  envVM.set('userToken', (old) => old + '0');
+
   console.clear();
-
-  console.log(timer);
-
-  console.log({
-    id: f1.id,
-    isRunning: queue.isRunning(f1.id),
-    isFinished: queue.isFinished(f1.id),
-    value: queue.getValue(f1.id),
-  });
-
-  console.log({
-    id: f2.id,
-    isRunning: queue.isRunning(f2.id),
-    isFinished: queue.isFinished(f2.id),
-    value: queue.getValue(f2.id),
-  });
-
-  timer++;
-}, 1000);
+  console.log('time', new Date(envVM.get('time')).toLocaleTimeString());
+  console.log('userToken', envVM.get('userToken'));
+}, 500);
