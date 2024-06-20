@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.3](https://github.com/gecut/hybrid-core/compare/@gecut/signal@2.2.2...@gecut/signal@2.2.3) (2024-06-20)
+
+### Bug Fixes
+
+* **signal:** context `functionalValue` ([70e046d](https://github.com/gecut/hybrid-core/commit/70e046d3620f26eedddec78d5b58cfd8062d9288)) by @MM25Zamanian
+
 ## [2.2.2](https://github.com/gecut/hybrid-core/compare/@gecut/signal@2.2.1...@gecut/signal@2.2.2) (2024-06-12)
 
 **Note:** Version bump only for package @gecut/signal
