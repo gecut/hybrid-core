@@ -16,7 +16,7 @@ export class ContextSignal<T> extends Signal<T> {
   }
 
   functionalValue(func: (value: T | undefined) => T) {
-    this.value = func(this.value);
+    return (this.value = func(this.value));
   }
 
   /**
