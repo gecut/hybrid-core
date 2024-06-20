@@ -115,7 +115,7 @@ __metadata:
   resolution: "@gecut/types@workspace:packages/types"
   dependencies:
     "@types/node": "npm:^20.11.27"
-    lit: "npm:^3.1.2"
+    lit: "npm:^3.1.4"
     type-fest: "npm:^4.12.0"
   languageName: unknown
   linkType: soft
@@ -4710,14 +4710,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lit@npm:^3.1.2":
-  version: 3.1.2
-  resolution: "lit@npm:3.1.2"
+"lit@npm:^3.1.4":
+  version: 3.1.4
+  resolution: "lit@npm:3.1.4"
   dependencies:
     "@lit/reactive-element": "npm:^2.0.4"
     lit-element: "npm:^4.0.4"
     lit-html: "npm:^3.1.2"
-  checksum: 10c0/47f10dbc6716974de6d6d6b75db278ac28869839c099e77f8f8494b25b1d3913f2c62126a52372a8b0c5e4a1d0d2301637d98d9ff1e583ee7d961998686810c9
+  checksum: 10c0/afa4954638e80f627c60bcbd2d800af710b9b3394a36cee9865b5ea5de95b4ec6d33de43ac0bf256b5b7c981d45c7c8ac0c7ddba6fcbd0c67d65986b0279b960
   languageName: node
   linkType: hard
 
