@@ -43,6 +43,6 @@
     "change-case": "^5.4.4"
   },
   "devDependencies": {
-    "@types/node": "^20.11.27"
+    "@types/node": "^20.14.7"
   }
 }
