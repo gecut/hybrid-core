@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/gecut/hybrid-core/compare/@gecut/signal@2.2.3...@gecut/signal@2.3.0) (2024-07-04)
+
+### Bug Fixes
+
+* **signal:** path ([9bcfca2](https://github.com/gecut/hybrid-core/commit/9bcfca2dc618024a0ab260ab4c8a3c24360c29bd)) by @MM25Zamanian
+
+### Features
+
+* **signal:** signal state ([2e86970](https://github.com/gecut/hybrid-core/commit/2e86970da56af295ff31bc5ab1e0fbd2f02f89fe)) by @MM25Zamanian
+
 ## [2.2.3](https://github.com/gecut/hybrid-core/compare/@gecut/signal@2.2.2...@gecut/signal@2.2.3) (2024-06-20)
 
 ### Bug Fixes
