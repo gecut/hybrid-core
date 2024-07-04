@@ -24,6 +24,9 @@
       "types": "./signal.d.ts"
     }
   },
+  "files": [
+    "**/*.{js,mjs,cjs,map,d.ts,html,md}"
+  ],
   "bugs": {
     "url": "https://github.com/gecut/hybrid-core/issues",
     "email": "dev@gecut.ir"
