@@ -1,67 +1,95 @@
 import {Signal} from './_signal.js';
 
+/**
+ * A signal that stores a context value of type T.
+ *
+ * This signal extends the basic {@link Signal} class and adds features specific to context values.
+ *
+ * @template T - The type of the context value.
+ */
 export class ContextSignal<T> extends Signal<T> {
+  /**
+   * Creates a new ContextSignal instance.
+   *
+   * @param {string} name - The name of the signal.
+   * @param {false | 'AnimationFrame' | 'IdleCallback' | number} [debounce=false] - The debounce configuration.
+   */
   constructor(name: string, debounce: false | 'AnimationFrame' | 'IdleCallback' | number = false) {
     super(name, 'context');
 
     this.__$debounceConfig = debounce;
   }
 
+  /**
+   * Requires the current value of the signal, waiting for it to be available if necessary.
+   *
+   * @return {Promise<T>} A promise that resolves with the current value of the signal.
+   */
   async requireValue(): Promise<T> {
     const value = this.__$value ?? (await this.__$untilNewNotify());
 
-    this.__$log.methodFull?.('requireValue', {}, value);
+    this.logger.methodFull?.('requireValue', {}, value);
 
     return value;
   }
 
-  functionalValue(func: (value: T | undefined) => T) {
+  /**
+   * Applies a function to the current value of the signal and sets the result as the new value.
+   *
+   * @param {(value: T | undefined) => T} func - The function to apply to the current value.
+   * @return {T} The new value of the signal.
+   */
+  functionalValue(func: (value: T | undefined) => T): T {
     return (this.value = func(this.value));
   }
 
   /**
-   * Get context value.
+   * Gets the current value of the signal.
    *
-   * @return {T | undefined} undefined if context not set before or expired.
+   * @return {T | undefined} The current value of the signal, or undefined if it has not been set or has expired.
    */
   get value(): T | undefined {
-    this.__$log.methodFull?.('getValue', {}, this.__$value);
+    this.logger.methodFull?.('getValue', {}, this.__$value);
 
     return this.__$value;
   }
 
   /**
-   * The function sets a value and notifies any subscribers.
-   * @param {T} value - The parameter "value" is of type T, which means it can be any type.
+   * Sets a new value for the signal and notifies any subscribers.
+   *
+   * @param {T} value - The new value to set.
    */
   set value(value: T) {
-    this.__$log.methodArgs?.('setValue', {value});
+    this.logger.methodArgs?.('setValue', {value});
 
     this.__$notify(value);
   }
 
   /**
-   * The "expire" function clears a cache.
+   * Clears the cache of the signal.
    */
   expire(): void {
-    this.__$log.method?.('expire');
+    this.logger.method?.('expire');
 
     super.__$clear();
   }
 
   /**
-   * The function "untilChange" returns a promise that resolves when a change is notified.
+   * Returns a promise that resolves when the signal changes.
    *
-   * @return {Promise<T>} The `untilChange()` function is returning a Promise of type `T`.
+   * @return {Promise<T>} A promise that resolves with the new value of the signal when it changes.
    */
   untilChange(): Promise<T> {
-    this.__$log.method?.('untilChange');
+    this.logger.method?.('untilChange');
 
     return this.__$untilNewNotify();
   }
 
+  /**
+   * Renotifies any subscribers with the current value of the signal.
+   */
   renotify() {
-    this.__$log.method?.('renotify');
+    this.logger.method?.('renotify');
 
     const value = this.value;
 
