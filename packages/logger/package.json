@@ -21,6 +21,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "**/*.{js,mjs,cjs,map,d.ts,html,md}"
+  ],
   "main": "logger.js",
   "types": "logger.d.ts",
   "exports": {
