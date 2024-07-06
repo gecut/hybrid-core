@@ -3,17 +3,32 @@ import {getColor} from './color-manager';
 import {DEV_MODE, NODE_MODE} from './core';
 
 export class GecutLogger {
+  constructor(domain: string, devMode = DEV_MODE) {
+    this.domain = GecutLogger.stabilizeDomain(domain);
+    this.devMode = devMode;
+    this.style = GecutLogger.style.scope.replaceAll('{{color}}', getColor());
+
+    this.index = ++GecutLogger.globalIndex;
+
+    this.initialize();
+
+    if (this.devMode) {
+      this.enableDevelopmentFeatures();
+    }
+  }
+
+  private static globalIndex = 0;
+  private static readonly keySection = NODE_MODE ? '%s%s%s%s%s' : '%c%s%c%s%c';
   private static readonly style = {
     scope: NODE_MODE ? '\x1b[{{color}}m' : 'color: {{color}};',
     reset: NODE_MODE ? '\x1b[0m' : 'color: inherit;',
     dim: NODE_MODE ? '\x1b[2m' : 'color:#888;',
   };
-  private static indexCounter = 0;
 
-  private readonly domain: string;
-  private readonly devMode: boolean;
-  private readonly styleString: string;
-  private readonly index: number;
+  index: number;
+  readonly domain: string;
+  readonly devMode: boolean;
+  readonly style: string;
 
   property?: (property: string, value: unknown) => void;
   method?: (method: string) => void;
@@ -27,21 +42,8 @@ export class GecutLogger {
   time?: (label: string) => void;
   timeEnd?: (label: string) => void;
 
-  constructor(domain: string, devMode = DEV_MODE) {
-    this.domain = GecutLogger.stabilizeDomain(domain);
-    this.devMode = devMode;
-    this.styleString = GecutLogger.style.scope.replace('{{color}}', getColor());
-    this.index = GecutLogger.getIndex();
-
-    this.initial();
-
-    if (this.devMode) {
-      this.initialDevelopments();
-    }
-  }
-
-  private static getIndex(): number {
-    return this.indexCounter++;
+  sub(domain: string, _devMode = this.devMode) {
+    return new GecutLogger(`${this.domain} ⬅ ${domain}`, _devMode);
   }
 
   private static stabilizeDomain(domain: string): string {
@@ -56,39 +58,77 @@ export class GecutLogger {
     return domain;
   }
 
-  private initial() {
-    this.error = this.createLogger(
-      'error',
-      `${GecutLogger.style.dim}[${this.index}] ${this.styleString}❌ %s.%s() Error ' %s'\n`,
-      this.domain,
-    );
-    this.warning = this.createLogger(
-      'warn',
-      `${GecutLogger.style.dim}[${this.index}] ${this.styleString}⚠️ %s.%s() Accident ' %s' %s!\n`,
-      this.domain,
-    );
+  private initialize() {
+    this.error = NODE_MODE
+      ? console.error.bind(
+        console,
+          `${GecutLogger.style.dim}[${this.index}] ${this.style}❌ \n%s\x1b[31m.%s() Error \`%s\`${GecutLogger.style.reset}\n`,
+          this.domain,
+      )
+      : console.error.bind(console, '%c%s%c.%s() Error `%s`\n', this.style, this.domain, GecutLogger.style.reset);
+
+    this.warning = NODE_MODE
+      ? console.warn.bind(
+        console,
+          `${GecutLogger.style.dim}[${this.index}] ${this.style}⚠️ \n%s\x1b[33m.%s() Accident \`%s\` %s!${GecutLogger.style.reset}`,
+          this.domain,
+      )
+      : console.warn.bind(console, '%c%s%c.%s() Warn `%s` %s!', this.style, this.domain, GecutLogger.style.reset);
   }
 
-  private initialDevelopments() {
+  private enableDevelopmentFeatures() {
     this.time = (label: string) => console.time(`[${this.index}] ${this.domain} ${label} duration`);
+
     this.timeEnd = (label: string) => console.timeEnd(`[${this.index}] ${this.domain} ${label} duration`);
 
-    this.property = this.createLogger('debug', `${GecutLogger.style.dim}.%s = %o;\n`, this.domain);
-    this.method = this.createLogger('debug', `${GecutLogger.style.dim}.%s();\n`, this.domain);
-    this.methodArgs = this.createLogger('debug', `${GecutLogger.style.dim}.%s(%o);\n`, this.domain);
-    this.methodFull = this.createLogger('debug', `${GecutLogger.style.dim}.%s(%o) => %o\n`, this.domain);
-    this.other = this.createLogger('debug', GecutLogger.style.dim + '%s %o\n', this.domain);
-  }
+    this.property = console.debug.bind(
+      console,
+      `${GecutLogger.keySection}.%s = %o;`,
+      GecutLogger.style.dim,
+      `[${this.index}] `,
+      this.style,
+      this.domain,
+      GecutLogger.style.reset,
+    );
 
-  private createLogger(
-    level: 'error' | 'warn' | 'debug',
-    format: string,
-    ...args: unknown[]
-  ): (...args: unknown[]) => void {
-    return console[level].bind(console, format, ...args);
-  }
+    this.method = console.debug.bind(
+      console,
+      `${GecutLogger.keySection}.%s();`,
+      GecutLogger.style.dim,
+      `[${this.index}] `,
+      this.style,
+      this.domain,
+      GecutLogger.style.reset,
+    );
 
-  sub(domain: string, _devMode = this.devMode): GecutLogger {
-    return new GecutLogger(`${this.domain} ⬅ ${domain}`, _devMode);
+    this.methodArgs = console.debug.bind(
+      console,
+      `${GecutLogger.keySection}.%s(%o);`,
+      GecutLogger.style.dim,
+      `[${this.index}] `,
+      this.style,
+      this.domain,
+      GecutLogger.style.reset,
+    );
+
+    this.methodFull = console.debug.bind(
+      console,
+      `${GecutLogger.keySection}.%s(%o) => %o`,
+      GecutLogger.style.dim,
+      `[${this.index}] `,
+      this.style,
+      this.domain,
+      GecutLogger.style.reset,
+    );
+
+    this.other = console.debug.bind(
+      console,
+      GecutLogger.keySection,
+      GecutLogger.style.dim,
+      `[${this.index}] `,
+      this.style,
+      this.domain,
+      GecutLogger.style.reset,
+    );
   }
 }
