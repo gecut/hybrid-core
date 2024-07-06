@@ -2,7 +2,7 @@
   "type": "module",
   "name": "@gecut/signal",
   "description": "Experience the pinnacle of high-performance, memory-safe signal architecture with our TypeScript-based npm package—easy to use and perfect for micro-component systems",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "license": "MIT",
   "keywords": [
     "High-performance",

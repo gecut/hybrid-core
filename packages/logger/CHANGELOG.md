@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.6](https://github.com/gecut/hybrid-core/compare/@gecut/logger@1.4.5...@gecut/logger@1.4.6) (2024-07-06)
+
+### Bug Fixes
+
+* **logger:** log ([ed2ff07](https://github.com/gecut/hybrid-core/commit/ed2ff07649d2cb0d1665a541ec38eefa91537837)) by @MM25Zamanian
+
 ## [1.4.5](https://github.com/gecut/hybrid-core/compare/@gecut/logger@1.4.4...@gecut/logger@1.4.5) (2024-07-04)
 
 **Note:** Version bump only for package @gecut/logger
