@@ -1,18 +1,34 @@
-import {GecutEnvVM} from '@gecut/utilities/envvm.js';
+import {GecutLogger} from '@gecut/logger';
 
-const envVM = new GecutEnvVM('demo', {
-  time: Date.now(),
-  userToken: 'ooooo',
-});
+const logger = new GecutLogger('main', true);
 
-console.log(envVM.get('time'));
-console.log(envVM.get('userToken'));
+logger.error('test', 'error_working', 'fuck1', 'fuck2', {object: 'test'}, ['test', 'test']);
+logger.warning('test', 'warning_working', 'warning description', 'fuck1', 'fuck2', {object: 'test'}, ['test', 'test']);
 
-setInterval(() => {
-  envVM.set('time', Date.now());
-  envVM.set('userToken', (old) => old + '0');
+logger.method?.('test');
+logger.methodArgs?.('test', {test: 'test'});
+logger.methodFull?.('test', {args: 'test'}, 'fuck');
 
-  console.clear();
-  console.log('time', new Date(envVM.get('time')).toLocaleTimeString());
-  console.log('userToken', envVM.get('userToken'));
-}, 500);
+logger.property?.('property', 'fuck');
+logger.other?.('other', 'warning description', 'fuck1', 'fuck2', {object: 'test'}, ['test', 'test']);
+
+logger.time?.('test');
+logger.timeEnd?.('test');
+
+const subLogger = logger.sub('sub');
+
+subLogger.error('test', 'error_working', 'fuck1', 'fuck2', {object: 'test'}, ['test', 'test']);
+subLogger.warning('test', 'warning_working', 'warning description', 'fuck1', 'fuck2', {object: 'test'}, [
+  'test',
+  'test',
+]);
+
+subLogger.method?.('test');
+subLogger.methodArgs?.('test', {test: 'test'});
+subLogger.methodFull?.('test', {args: 'test'}, 'fuck');
+
+subLogger.property?.('property', 'fuck');
+subLogger.other?.('other', 'warning description', 'fuck1', 'fuck2', {object: 'test'}, ['test', 'test']);
+
+subLogger.time?.('test');
+subLogger.timeEnd?.('test');
