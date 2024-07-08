@@ -34,7 +34,12 @@ export abstract class Signal<T> {
 
     this.subscribers.set(callback, resolvedOptions);
 
-    if (resolvedOptions.receivePrevious && this.__$hasDispatched && this.__$value && !resolvedOptions.disabled) {
+    if (
+      resolvedOptions.receivePrevious === true &&
+      this.__$hasDispatched === true &&
+      this.__$value != null &&
+      resolvedOptions.disabled !== true
+    ) {
       callback(this.__$value);
     }
 
