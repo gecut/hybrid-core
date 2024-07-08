@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.4](https://github.com/gecut/hybrid-core/compare/@gecut/signal@2.3.3...@gecut/signal@2.3.4) (2024-07-08)
+
+### Bug Fixes
+
+* **signal:** core notify ([63d37e0](https://github.com/gecut/hybrid-core/commit/63d37e0b9a29a86c13357bc5c9807e89f865db00)) by @MM25Zamanian
+
 ## [2.3.3](https://github.com/gecut/hybrid-core/compare/@gecut/signal@2.3.2...@gecut/signal@2.3.3) (2024-07-06)
 
 **Note:** Version bump only for package @gecut/signal
