@@ -1,5 +1,5 @@
-import {isNode} from './browser-or-node';
-import {parseJson} from './parse-json';
+import {isNode} from './browser-or-node.js';
+import {parseJson} from './parse-json.js';
 
 function get<T>(name: string, defaultValue: T): T {
   if (isNode()) return defaultValue;

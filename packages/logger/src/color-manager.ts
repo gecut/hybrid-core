@@ -1,4 +1,4 @@
-import {NODE_MODE} from './core';
+import {NODE_MODE} from './core.js';
 
 export const colors = {
   browsers: {

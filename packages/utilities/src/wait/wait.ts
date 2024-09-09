@@ -1,4 +1,4 @@
-import {nextAnimationFrame, nextIdleCallback} from './polyfill';
+import {nextAnimationFrame, nextIdleCallback} from './polyfill.js';
 
 export async function untilMS(delayMS: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, delayMS));

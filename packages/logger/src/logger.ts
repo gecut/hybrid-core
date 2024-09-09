@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
-import {getColor} from './color-manager';
-import {DEV_MODE, NODE_MODE} from './core';
+import {getColor} from './color-manager.js';
+import {DEV_MODE, NODE_MODE} from './core.js';
 
 export class GecutLogger {
   constructor(domain: string, devMode = DEV_MODE) {

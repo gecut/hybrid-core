@@ -1,5 +1,5 @@
-import {isiOS} from './android-or-ios';
-import {requiredBrowser} from './browser-or-node';
+import {isiOS} from './android-or-ios.js';
+import {requiredBrowser} from './browser-or-node.js';
 
 export default function shareSMS(phoneNumber: string, message: string) {
   requiredBrowser();

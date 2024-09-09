@@ -4,7 +4,7 @@ import {
   cancelNextAnimationFrame,
   cancelNextIdleCallback,
   supported,
-} from './wait/polyfill';
+} from './wait/polyfill.js';
 
 /**
  * The `debounce` function takes a function and a delay as arguments and returns a new function that

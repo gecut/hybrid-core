@@ -1,4 +1,4 @@
-import {InMemorySimpleCache} from './in-memory.simple';
+import {InMemorySimpleCache} from './in-memory.simple.js';
 
 export class InMemoryAdvancedCache<T> extends InMemorySimpleCache<T> {
   protected expiresMap = new Map<string, number>();

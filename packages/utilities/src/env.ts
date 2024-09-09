@@ -1,4 +1,4 @@
-import {isBrowser} from './browser-or-node';
+import {isBrowser} from './browser-or-node.js';
 
 type EnvReturn<T extends 'string' | 'number'> = T extends 'number' ? number : string;
 

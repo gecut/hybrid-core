@@ -1,4 +1,4 @@
-import {numberUtils} from './number';
+import {numberUtils} from './number.js';
 
 export const arrayUtils = {
   is: Array.isArray,

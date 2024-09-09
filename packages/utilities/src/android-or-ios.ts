@@ -1,4 +1,4 @@
-import {detectOperatingSystem} from './detect-os';
+import {detectOperatingSystem} from './detect-os.js';
 
 export function isAndroid(): boolean {
   return detectOperatingSystem() === 'android';

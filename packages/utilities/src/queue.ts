@@ -1,5 +1,5 @@
-import {uid} from './uid';
-import {untilIdle, untilMS, untilNextFrame} from './wait/wait';
+import {uid} from './uid.js';
+import {untilIdle, untilMS, untilNextFrame} from './wait/wait.js';
 
 /**
  * GecutQueue class
