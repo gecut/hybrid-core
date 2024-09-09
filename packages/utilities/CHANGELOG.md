@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.4.1](https://github.com/gecut/hybrid-core/compare/@gecut/utilities@5.4.0...@gecut/utilities@5.4.1) (2024-09-09)
+
+### Bug Fixes
+
+* **signal:** context `functionalValue` ([70e046d](https://github.com/gecut/hybrid-core/commit/70e046d3620f26eedddec78d5b58cfd8062d9288)) by @
+
 # [5.4.0](https://github.com/gecut/hybrid-core/compare/@gecut/utilities@5.3.0...@gecut/utilities@5.4.0) (2024-06-12)
 
 ### Features
