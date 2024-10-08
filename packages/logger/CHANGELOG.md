@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/gecut/hybrid-core/compare/@gecut/logger@1.4.7...@gecut/logger@2.0.0) (2024-10-08)
+
+**Note:** Version bump only for package @gecut/logger
+
 ## [1.4.7](https://github.com/gecut/hybrid-core/compare/@gecut/logger@1.4.6...@gecut/logger@1.4.7) (2024-09-09)
 
 **Note:** Version bump only for package @gecut/logger
