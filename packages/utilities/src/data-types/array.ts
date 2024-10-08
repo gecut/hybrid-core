@@ -1,4 +1,5 @@
 import {Nullable} from '@gecut/types';
+
 import {randomNumber} from './number';
 
 export const isArray = (value: unknown): value is unknown[] => Array.isArray(value);

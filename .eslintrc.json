@@ -38,8 +38,7 @@
     "space-infix-ops": "error",
     "new-cap": ["error", {"capIsNewExceptionPattern": "Mixin$"}],
     "brace-style": ["error", "stroustrup", {"allowSingleLine": true}],
-    "indent": "off",
-    "@typescript-eslint/indent": [
+    "indent": [
       "error",
       2,
       {

@@ -7,7 +7,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* **signal:** context `functionalValue` ([70e046d](https://github.com/gecut/hybrid-core/commit/70e046d3620f26eedddec78d5b58cfd8062d9288)) by @
+- **signal:** context `functionalValue` ([70e046d](https://github.com/gecut/hybrid-core/commit/70e046d3620f26eedddec78d5b58cfd8062d9288)) by @
 
 # [5.4.0](https://github.com/gecut/hybrid-core/compare/@gecut/utilities@5.3.0...@gecut/utilities@5.4.0) (2024-06-12)
 

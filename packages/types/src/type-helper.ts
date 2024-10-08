@@ -21,11 +21,6 @@ export type ObjectPartial<T, K extends ObjectBooleanize<T>> = {
   [P in keyof T]: K[P] extends true ? T[P] : undefined;
 };
 
-export type SanitizeFunction<T> = {
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  [P in keyof T]: T[P] extends Function ? undefined : T[P];
-};
-
 /**
  * Object that can be JSON.stringify.
  */
@@ -44,7 +39,7 @@ export type Prop<T, K> = K extends keyof T ? T[K] : never;
 
 export type Values<T> = T[keyof T];
 export type Keys<T> = keyof T;
-export type ArrayValues<T extends Readonly<any[]>> = T[number];
+export type ArrayValues<T extends readonly any[]> = T[number];
 export type ArrayItems<T> = T extends (infer K)[] ? K : T;
 
 export type UnknownRecord<T = unknown> = Record<string, T>;
