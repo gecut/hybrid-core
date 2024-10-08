@@ -1,21 +1,15 @@
-import {numberUtils} from './number.js';
+import {Nullable} from '@gecut/types';
 
-export const arrayUtils = {
-  is: Array.isArray,
-  sanitize<T extends unknown[]>(array: T): T {
-    return array.filter((item, index) => array.indexOf(item) === index) as T;
-  },
-  range(count: number): number[] {
-    return Array.from({length: count}, (_, i) => i + 1);
-  },
-  joinString(separator = ' ', ...values: (unknown | undefined | null)[]): string {
-    values = values.map((value) => String(value));
+import {randomNumber} from './number';
 
-    return values.join(separator);
-  },
-  random: {
-    choice<T>(arr: T[]): T {
-      return arr[numberUtils.random.number(arr.length - 1)];
-    },
-  },
-};
+export const isArray = (value: unknown): value is unknown[] => Array.isArray(value);
+
+export const sanitize = <T extends unknown[]>(array: T): T =>
+  array.filter((item, index) => array.indexOf(item) === index) as T;
+
+export const range = (count: number): number[] => Array.from({length: count}, (_, i) => i + 1);
+
+export const joinString = (separator = ' ', ...values: Nullable<unknown>[]): string =>
+  values.map(String).join(separator);
+
+export const choose = <T>(arr: T[]): T => arr[randomNumber(arr.length - 1)];

@@ -11,7 +11,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* **logger:** log ([ed2ff07](https://github.com/gecut/hybrid-core/commit/ed2ff07649d2cb0d1665a541ec38eefa91537837)) by @MM25Zamanian
+- **logger:** log ([ed2ff07](https://github.com/gecut/hybrid-core/commit/ed2ff07649d2cb0d1665a541ec38eefa91537837)) by @MM25Zamanian
 
 ## [1.4.5](https://github.com/gecut/hybrid-core/compare/@gecut/logger@1.4.4...@gecut/logger@1.4.5) (2024-07-04)
 

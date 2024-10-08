@@ -1,7 +1,5 @@
 import type {Nullable} from '@gecut/types';
 
-export const stringUtils = {
-  sanitizer<T extends Nullable<string>>(data: T): NonNullable<T> {
-    return String(data ?? '') as NonNullable<T>;
-  },
+export const sanitize = <T extends Nullable<string>>(str: T): T => {
+  return String(str ?? '') as NonNullable<T>;
 };
