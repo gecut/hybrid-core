@@ -38,7 +38,7 @@
     "rl": "run-s pull clean build release",
     "upd": "yarn set version latest; yarn up '*' -i; yarn up '*' -R; yarn dlx @yarnpkg/sdks vscode;",
     "lint": "run-s 'lint:*'",
-    "lint:ts": "eslint --config .eslintrc.json --ignore-path .gitignore --ext .ts '.'",
+    "lint:ts": "eslint --config .eslintrc.json --ignore-pattern .gitignore --ext .ts '.'",
     "build": "run-s build:ts build:r",
     "build:ts": "tsc --build",
     "build:r": "lerna run build",
