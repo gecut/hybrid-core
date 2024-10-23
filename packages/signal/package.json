@@ -44,6 +44,7 @@
   "dependencies": {
     "@gecut/logger": "workspace:^",
     "@gecut/types": "workspace:^",
-    "@gecut/utilities": "workspace:^"
+    "@gecut/utilities": "workspace:^",
+    "ky": "^1.7.2"
   }
 }
