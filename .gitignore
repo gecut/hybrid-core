@@ -13,15 +13,6 @@ Desktop.ini
 # Logs
 *.log*
 
-# package managers
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
-#!.yarn/cache
-.pnp.*
 node_modules
 package-lock.json
 
