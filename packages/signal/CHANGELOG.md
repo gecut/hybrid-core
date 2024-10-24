@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/gecut/hybrid-core/compare/@gecut/signal@3.0.0...@gecut/signal@3.1.0) (2024-10-24)
+
+### Features
+
+* **signal/server-context:** ServerContext ([d01ee9e](https://github.com/gecut/hybrid-core/commit/d01ee9e039c6b10ca37e2e717c9a2c08fe1abee8)) by @MM25Zamanian
+
 # [3.0.0](https://github.com/gecut/hybrid-core/compare/@gecut/signal@2.3.5...@gecut/signal@3.0.0) (2024-10-08)
 
 **Note:** Version bump only for package @gecut/signal
