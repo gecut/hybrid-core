@@ -1,7 +1,7 @@
 {
   "$schema": "https://unpkg.com/lerna@8.1.2/schemas/lerna-schema.json",
   "version": "independent",
-  "npmClient": "yarn",
+  "npmClient": "bun",
   "packages": ["packages/*", "demo"],
   "loglevel": "verbose",
   "command": {
