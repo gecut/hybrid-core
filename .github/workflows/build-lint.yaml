@@ -34,7 +34,7 @@ jobs:
         run: bun install # Use Bun's package manager
 
       - name: Build Typescript
-        run: bun build # Leverage Bun's built-in build functionality
+        run: bun run build # Leverage Bun's built-in build functionality
 
       - name: Run ESLint
         run: bun run lint # Execute ESLint using Bun's task runner (if applicable)
