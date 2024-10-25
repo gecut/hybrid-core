@@ -1,6 +1,6 @@
 {
   "name": "@gecut/utilities",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "type": "module",
   "description": "The ultimate utility toolkit from Gecut Company, crafted with TypeScript for optimal speed and efficiency. Designed to boost productivity with a suite of fast and optimized tools.",
   "keywords": [
