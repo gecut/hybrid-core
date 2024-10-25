@@ -59,7 +59,7 @@ export default function debounce<Args extends unknown[], Return>(
     };
   }
   else {
-    let timerId: NodeJS.Timeout;
+    let timerId: Timer;
 
     if (typeof delay !== 'number') {
       delay = 0;
