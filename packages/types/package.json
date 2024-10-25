@@ -1,6 +1,6 @@
 {
   "name": "@gecut/types",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "type": "module",
   "description": "Internal types for Gecut Company",
   "keywords": [
@@ -42,5 +42,6 @@
     "@types/node": "^22.5.4",
     "lit": "^3.2.0",
     "type-fest": "^4.26.1"
-  }
+  },
+  "gitHead": "759603d0dcd8f7610d7439a4e4cda7eaaaf9e0e9"
 }

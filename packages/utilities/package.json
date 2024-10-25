@@ -1,6 +1,6 @@
 {
   "name": "@gecut/utilities",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "type": "module",
   "description": "The ultimate utility toolkit from Gecut Company, crafted with TypeScript for optimal speed and efficiency. Designed to boost productivity with a suite of fast and optimized tools.",
   "keywords": [
@@ -39,10 +39,11 @@
     "**/*.{js,mjs,cjs,map,d.ts,html,md}"
   ],
   "dependencies": {
-    "@gecut/types": "workspace:^",
+    "@gecut/types": "^7.0.2",
     "change-case": "^5.4.4"
   },
   "devDependencies": {
     "@types/node": "^22.5.4"
-  }
+  },
+  "gitHead": "759603d0dcd8f7610d7439a4e4cda7eaaaf9e0e9"
 }
