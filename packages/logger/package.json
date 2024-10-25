@@ -1,6 +1,6 @@
 {
   "name": "@gecut/logger",
-  "version": "7.0.2",
+  "version": "7.0.3",
   "type": "module",
   "author": {
     "name": "S. MohammadMahdi Zamanian",
@@ -41,7 +41,7 @@
     "url": "https://github.com/gecut/hybrid-core/issues"
   },
   "dependencies": {
-    "@gecut/utilities": "^7.0.2"
+    "@gecut/utilities": "^7.0.3"
   },
   "gitHead": "759603d0dcd8f7610d7439a4e4cda7eaaaf9e0e9"
 }
