@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
-name: Build & Lint
+name: Build & Lint (Bun FTW! )
 
 on:
   workflow_dispatch:
@@ -17,7 +17,7 @@ env:
 
 jobs:
   build-lint-ts:
-    name: Build & Lint Typescript
+    name: Build & Lint Typescript (Bun Style )
     runs-on: ubuntu-latest
 
     permissions:
@@ -27,32 +27,14 @@ jobs:
       - name: ⤵️ Checkout repository
         uses: actions/checkout@v4.1.2
 
-      - name: 🏗 Setup nodejs
-        uses: actions/setup-node@v4.0.2
-        with:
-          node-version: ${{ env.NODE_VERSION }}
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1 # Install Bun for our workflow
 
-      - name: 🏗 Setup nodejs corepack
-        run: corepack enable
+      - name: Install dependencies
+        run: bun install # Use Bun's package manager
 
-      - name: 🏗 Get yarn config
-        id: yarn_config
-        run: echo "cache_folder=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+      - name: Build Typescript
+        run: bun build # Leverage Bun's built-in build functionality
 
-      - name: 🏗 Cache Layer
-        uses: actions/cache@v4.0.1
-        # id: yarn_cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn_config.outputs.cache_folder }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: 🏗 Install dependencies
-        run: yarn install --immutable
-
-      - name: 🚀 Build Typescript
-        run: yarn build
-
-      - name: 🚀 Run ESLint
-        run: yarn lint
+      - name: Run ESLint
+        run: bun run lint # Execute ESLint using Bun's task runner (if applicable)

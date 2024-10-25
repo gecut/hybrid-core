@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
-name: Publish NPM
+name: Publish with Bun
 
 on:
   workflow_dispatch:
@@ -13,8 +13,8 @@ env:
   NODE_VERSION: lts/*
 
 jobs:
-  publish-npm:
-    name: Publish NPM
+  publish-with-bun:
+    name: Publish with Bun
     runs-on: ubuntu-latest
 
     permissions:
@@ -24,38 +24,21 @@ jobs:
       - name: ⤵️ Checkout repository
         uses: actions/checkout@v4.1.2
 
-      - name: 🏗 Setup nodejs
+      - name: Setup Node.js (for Bun)
         uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ env.NODE_VERSION }}
-          registry-url: 'https://registry.npmjs.org'
 
-      - name: 🏗 Setup nodejs corepack
-        run: corepack enable
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
 
-      - name: 🏗 Get yarn config
-        id: yarn_config
-        run: echo "cache_folder=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+      - name: Install dependencies (Bun)
+        run: bun install --frozen
 
-      - name: 🏗 Cache Layer
-        uses: actions/cache@v4.0.1
-        # id: yarn_cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn_config.outputs.cache_folder }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+      - name: Build Typescript
+        run: bun build
 
-      - name: 🏗 Install dependencies
-        run: yarn install --immutable
-
-      - name: 🏗 Build Typescript
-        run: yarn build
-
-      # - name: 🚀 Extra Packages Build
-      #   run: yarn build:r
-
-      - name: 🚀 Publish
-        run: yarn run publish --yes
+      - name: Publish (with Bun)
+        run: bun run publish --yes
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
