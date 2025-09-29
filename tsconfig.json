@@ -10,10 +10,7 @@
   "exclude": [],
   "references": [
     // packages
-    {"path": "./packages/types"},
-    {"path": "./packages/signal"},
     {"path": "./packages/logger"},
-    {"path": "./packages/utilities"},
 
     // demo
     {"path": "./demo"}

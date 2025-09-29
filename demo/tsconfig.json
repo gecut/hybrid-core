@@ -13,5 +13,5 @@
 
   "include": ["**/*.ts"],
   "exclude": ["*.d.ts", "node_modules"],
-  "references": [{"path": "../packages/logger"}, {"path": "../packages/utilities"}]
+  "references": [{"path": "../packages/logger"}]
 }

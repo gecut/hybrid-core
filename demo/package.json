@@ -6,10 +6,9 @@
   "type": "module",
   "private": true,
   "devDependencies": {
-    "@types/node": "^22.5.4"
+    "@types/node": "^24.5.2"
   },
   "dependencies": {
-    "@gecut/logger": "workspace:^",
-    "@gecut/utilities": "workspace:^"
+    "@gecut/logger": "workspace:*"
   }
 }

@@ -29,25 +29,25 @@
     "build:ts": "tsc --build",
     "build:r": "lerna run build",
     "format": "run-s format:prettier format:eslint",
-    "format:eslint": "bun run lint:ts --fix",
+    "format:eslint": "pnpm run lint:ts --fix",
     "format:prettier": "prettier . --ignore-path .prettierignore --write",
     "clean": "git clean -d -x -f --exclude=node_modules --exclude='*.env' --exclude=_data --exclude='.pnp*'",
     "serve": "wds",
     "watch": "run-p 'watch:*' serve",
-    "watch:ts": "bun run build:ts --watch --preserveWatchOutput",
+    "watch:ts": "pnpm run build:ts --watch --preserveWatchOutput",
     "pull": "git pull",
     "release": "lerna version",
     "publish": "lerna publish from-package"
   },
   "devDependencies": {
-    "@lerna-lite/changed": "^3.9.1",
-    "@lerna-lite/cli": "^3.9.1",
-    "@lerna-lite/diff": "^3.9.1",
-    "@lerna-lite/exec": "^3.9.1",
-    "@lerna-lite/publish": "^3.9.1",
-    "@lerna-lite/run": "^3.9.1",
-    "@lerna-lite/version": "^3.9.1",
-    "@types/node": "^22.5.4",
+    "@lerna-lite/changed": "^4.9.0",
+    "@lerna-lite/cli": "^4.9.0",
+    "@lerna-lite/diff": "^4.9.0",
+    "@lerna-lite/exec": "^4.9.0",
+    "@lerna-lite/publish": "^4.9.0",
+    "@lerna-lite/run": "^4.9.0",
+    "@lerna-lite/version": "^4.9.0",
+    "@types/node": "^24.5.2",
     "@typescript-eslint/eslint-plugin": "^8.5.0",
     "@typescript-eslint/parser": "^8.5.0",
     "@web/dev-server": "^0.4.6",
@@ -56,7 +56,7 @@
     "eslint-plugin-import": "^2.30.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.3.3",
-    "typescript": "^5.3.3",
-    "@types/bun": "latest"
-  }
+    "typescript": "^5.3.3"
+  },
+  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }
